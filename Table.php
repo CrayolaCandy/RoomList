@@ -1,8 +1,15 @@
 <?php
 session_start();?>
 <html>
-    <body>
-        <div align = "center">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' 
+        rel='stylesheet'>
+
+</head>
+    <body class = "main">
+        <div class = "wrapper" align = "center">
     <h1> Room List</h1>
     <?php
         if(isset($_SESSION['status']))
@@ -49,7 +56,6 @@ session_start();?>
             </td>
         </tr>
 </table>
-
     </form>
         <table>
             <tr>
@@ -57,12 +63,11 @@ session_start();?>
                 <th>Weekday</th>
                 <th>Start</th>
                 <th>End</th>
-            </tr>
+    </tr>  
             <?php
                 $conn = mysqli_connect("localhost", "root", "", "building");
                 $sql = "SELECT * FROM building.binfo";
                 $result = $conn->query($sql);
-
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr><td>" . $row["room"] . 
