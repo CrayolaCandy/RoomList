@@ -26,6 +26,10 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `binfo`
 --
+DROP SCHEMA IF EXISTS building;
+CREATE SCHEMA `building`;
+USE building;
+
 
 CREATE TABLE `binfo` (
   `room` int(11) NOT NULL,
